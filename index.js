@@ -1,4 +1,4 @@
-import APIkey from "./modules/key.js";
+import {APIkey} from "./key.js";
 
 let cityName = document.getElementsByTagName("input")[0];
 cityName.addEventListener("keydown", (e) => {
@@ -10,13 +10,10 @@ if (e.key === "Enter") {
     )
     .then((response) => response.json())
     .then((json) => {
-        //console.log(json);
         document.write(`img : ${json.weather[0].main} <br>`);
-        document.write(
-        `description : ${json.weather[0].description} <br>`
-        );
+        document.write(`description : ${json.weather[0].description} <br>`);
         document.write(`wind speed : ${json.wind.speed}m/s <br>`);
-        document.write(`temperature : ${json.main.temp}°C <br>`);
+        document.write(`mintemperature : ${json.main.temp_min}°C, mintemperature : ${json.main.temp_max}°C<br>`);
         document.write(`humidity : ${json.main.humidity}% <br>`);
     })
     .catch(() => {
