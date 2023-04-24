@@ -12,10 +12,10 @@ if (e.key === "Enter") {
         let weatherCondition=document.querySelector('.popup > img');
         let weatherId=json.weather[0].icon[0]+json.weather[0].icon[1];
         let description=document.querySelector('.description');
-        let wind=document.querySelector('.wind>span:last-child');
-        let humidity=document.querySelector('.hum>span:last-child');
-        let tempMin=document.querySelector('.temp>.min>span:last-child');
-        let tempMax=document.querySelector('.temp>.max>span:last-child');
+        let wind=document.querySelector('.wind>.information>span:last-child');
+        let humidity=document.querySelector('.hum>.information>span:last-child');
+        let tempMin=document.querySelector('.temp>.min>.information>span:last-child');
+        let tempMax=document.querySelector('.temp>.max>.information>span:last-child');
         switch(weatherId){
             case '01':weatherCondition.src="img/clearSky.png"; break;
             case '02': weatherCondition.src='img/clouds.png';break;
@@ -31,14 +31,17 @@ if (e.key === "Enter") {
         humidity.innerHTML=`${json.main.humidity}%`;
         tempMin.innerHTML=`${json.main.temp_min}°C`;
         tempMax.innerHTML=`${json.main.temp_max}°C`;
-        //document.write(`img : ${json.weather[0].icon} <br>`);
-        //document.write(`description : ${json.weather[0].description} <br>`);
-        //document.write(`wind speed : ${json.wind.speed}m/s <br>`);
-        //document.write(`mintemperature : ${json.main.temp_min}°C, mintemperature : ${json.main.temp_max}°C<br>`);
-        //document.write(`humidity : ${json.main.humidity}% <br>`);
+        document.querySelector(".container").style.height='75%';
+        document.querySelector(".popup").style.visibility= 'visible';
+        document.querySelector(".grid-prac").style.visibility= 'visible';
     })
-    .catch(() => {
-        document.write("비상비상비상");
+    .catch((e) => {
+        console.error(e);
+        let weatherCondition=document.querySelector('.popup > img').src='img/weather-news.png';
+        description.innerHTML="No such address exists";
+        document.querySelector(".container").style.height='75%';
+        document.querySelector(".popup").style.visibility= 'visible';
+        document.querySelector(".grid-prac").style.visibility= 'hidden';
     });
 }
 });
