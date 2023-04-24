@@ -1,14 +1,16 @@
+*{
+    margin:0;
+    
+}
 body{
     background-color:dodgerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .container__search-bar{
-    width: 500px;
-    height: 70px;
-    font-size: 50px;
-    text-align: center;
-    border-radius: 15px;
-    border:none;
-    color:darkslateblue;
+    box-sizing: content-box;
+    width: 100%;
 }
 .container__search-bar::placeholder{
     color:dodgerblue;
@@ -27,10 +29,28 @@ body{
     text-align: center;
     color:aliceblue;
 }
+
 .container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 800px;
+    background-color:aliceblue;
+    height: 500px;
+    width: 500px;
+    border-radius: 15px;
+}
+
+.container__main-image{
+    width: 350px;
+    height: 350px;
+    margin-bottom: 50px;
+}
+.popup{
+
+}
+.popup > img{
+    height: 100px;
+    width: 100px;
 }
