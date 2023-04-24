@@ -32,7 +32,7 @@ if (e.key === "Enter") {
         tempMin.innerHTML=`${json.main.temp_min}°C`;
         tempMax.innerHTML=`${json.main.temp_max}°C`;
         description.style.color='darkblue';
-        document.querySelector(".container").style.height='75%';
+        document.querySelector(".container").style.height='700px';
         document.querySelector(".popup").style.visibility= 'visible';
         document.querySelector(".popup").classList.toggle('fadeIn');
         document.querySelector(".grid-prac").style.visibility= 'visible';
@@ -42,7 +42,7 @@ if (e.key === "Enter") {
         let description=document.querySelector('.description');
         description.innerHTML="Sorry, Invalid Location!";
         description.style.color='darkred';
-        document.querySelector(".container").style.height='60%';
+        document.querySelector(".container").style.height='550px';
         document.querySelector(".popup").style.visibility= 'visible';
         document.querySelector(".grid-prac").style.visibility= 'hidden';
         document.querySelector(".popup").classList.toggle('fadeIn');
