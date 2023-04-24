@@ -31,17 +31,22 @@ if (e.key === "Enter") {
         humidity.innerHTML=`${json.main.humidity}%`;
         tempMin.innerHTML=`${json.main.temp_min}°C`;
         tempMax.innerHTML=`${json.main.temp_max}°C`;
+        description.style.color='darkblue';
         document.querySelector(".container").style.height='75%';
         document.querySelector(".popup").style.visibility= 'visible';
+        document.querySelector(".popup").classList.toggle('fadeIn');
         document.querySelector(".grid-prac").style.visibility= 'visible';
     })
     .catch((e) => {
-        console.error(e);
         let weatherCondition=document.querySelector('.popup > img').src='img/weather-news.png';
-        description.innerHTML="No such address exists";
-        document.querySelector(".container").style.height='75%';
+        let description=document.querySelector('.description');
+        description.innerHTML="Sorry, Invalid Location!";
+        description.style.color='darkred';
+        document.querySelector(".container").style.height='60%';
         document.querySelector(".popup").style.visibility= 'visible';
         document.querySelector(".grid-prac").style.visibility= 'hidden';
+        document.querySelector(".popup").classList.toggle('fadeIn');
+        console.error(e);
     });
 }
 });

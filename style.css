@@ -19,6 +19,8 @@ body{
     margin-bottom:20px ;
     font-size: 80px;
     font-weight: 900;
+    text-decoration: none;
+    cursor: pointer;
 }
 .container__search{
     display: flex;
@@ -37,6 +39,7 @@ body{
     text-align: center;
     height: 50px;
     font-size: 50px;
+    font-weight: 600;
 }
 .container__search i{
     font-size: 40px;
@@ -50,11 +53,12 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 10%;
+    height: 100px;
     background-color:aliceblue;
     width: 70%;
     border-radius: 15px;
     position: relative;
+    transition: 0.5s ease-out;
 }
 
 .popup{
@@ -112,4 +116,16 @@ body{
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     column-gap: 40px;
+}
+
+.fadeIn{
+    animation: 0.5s fadeIn forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes fadeIn{
+    to {
+        scale: 1;
+        opacity: 1;
+    }
 }
